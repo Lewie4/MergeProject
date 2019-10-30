@@ -6,4 +6,9 @@ using UnityEngine;
 public class ItemData
 {
     //Variables
+    [SerializeField] private int itemID;
+    [SerializeField] private Sprite itemThumbnail;
+    [SerializeField] private string itemName;
+    [SerializeField] private double itemValue;
+    [SerializeField] private float itemTime;
 }
