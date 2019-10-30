@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemContainer : MonoBehaviour
 {
-    [SerializeField] ItemData itemData;
+    public GameObject item;
 
     private RectTransform rectTransform;
 
@@ -16,5 +16,15 @@ public class ItemContainer : MonoBehaviour
     public RectTransform GetRectTransform()
     {
         return rectTransform;
+    }
+
+    public void Merge(GameObject oldItem)
+    {
+        item = oldItem;
+    }
+
+    public void Remove()
+    {
+        item = null;
     }
 }
