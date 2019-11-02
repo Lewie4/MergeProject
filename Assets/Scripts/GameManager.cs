@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -20,9 +21,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float itemSpeedUpPercentage = 0.1f;
     [SerializeField] private Slider itemSpawnSlider;
 
-    [Header("Upgrades")]
-    [SerializeField] private int itemSpawnLevel;
-
     private float nextSpawnTime;
 
     private void Update()
@@ -38,7 +36,7 @@ public class GameManager : Singleton<GameManager>
         if (nextSpawnTime >= itemSpawnTime)
         {
             nextSpawnTime -= itemSpawnTime;
-            ItemManager.Instance.SpawnItem(itemSpawnLevel);
+            ItemManager.Instance.SpawnItem(UpgradeManager.Instance.GetUpgradeLevel(Upgrade.ItemSpawnLevel));
         }
 
         itemSpawnSlider.value = nextSpawnTime / itemSpawnTime;
@@ -63,5 +61,17 @@ public class GameManager : Singleton<GameManager>
         {
             softCurrencyText.text = softCurrency.ToString();
         }
+    }
+
+    public bool TryPurchase(float cost, Action success)
+    {
+        if (softCurrency >= cost)
+        {
+            softCurrency -= cost;
+            success.Invoke();
+            return true;
+        }
+        //Show not enough currency popup
+        return false;
     }
 }

@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Upgrade", order = 2)]
 public class UpgradeScriptableObject : ScriptableObject
 {
-    public List<Vector2> itemSpawnLevels;
+    public List<Vector2> valueCost;
 }
