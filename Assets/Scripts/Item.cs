@@ -22,12 +22,12 @@ public class Item : MonoBehaviour
 
         if (itemLevel < 0)
         {
-            itemImage.color = Color.clear;
+            itemImage.sprite = null;
         }
         else
         {
             itemData = ItemManager.Instance.GetItemData(itemLevel);
-            itemImage.color = itemData.itemThumbnail;
+            itemImage.sprite = itemData.itemThumbnail;
         }
     }
 

@@ -7,7 +7,7 @@ public class ItemData
 {
     //Variables
     public int itemLevel;
-    public Color itemThumbnail;
+    public Sprite itemThumbnail;
     public string itemName;
     public float itemSoftCurrency;
     public float itemTime;
