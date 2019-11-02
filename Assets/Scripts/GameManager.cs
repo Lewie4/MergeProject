@@ -17,9 +17,11 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Items")]
     [SerializeField] private float itemSpawnTime = 5f;
-    [SerializeField] private int itemSpawnLevel;
     [SerializeField] private float itemSpeedUpPercentage = 0.1f;
     [SerializeField] private Slider itemSpawnSlider;
+
+    [Header("Upgrades")]
+    [SerializeField] private int itemSpawnLevel;
 
     private float nextSpawnTime;
 
