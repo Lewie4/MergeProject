@@ -6,8 +6,8 @@ using UnityEngine;
 public class ItemData
 {
     //Variables
-    public int itemID;
-    public Sprite itemThumbnail;
+    public int itemLevel;
+    public Color itemThumbnail;
     public string itemName;
     public double itemValue;
     public float itemTime;

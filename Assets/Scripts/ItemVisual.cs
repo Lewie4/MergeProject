@@ -8,47 +8,41 @@ public class ItemVisual : EventTrigger
     [SerializeField] ItemContainer currentContainer;
     [SerializeField] ItemContainer targetContainer;
 
-    public void Spawn(ItemContainer container)
+    private void Start()
     {
-        currentContainer = container;
+        currentContainer = transform.parent.gameObject.GetComponent<ItemContainer>();
     }
 
     private void Move()
     {
-        if (targetContainer != null || targetContainer == currentContainer)
+        if(targetContainer == null || targetContainer == currentContainer)
         {
-            if (currentContainer == null)
-            {
-                currentContainer = targetContainer;
-            }
-
-            if (CheckMerge(targetContainer))
-            {
-                targetContainer.Merge(this.gameObject);
-                currentContainer.Remove();
-
-                currentContainer = targetContainer;                
-            }
+            SetContainer(currentContainer);
+            return;
         }
+
+        ItemManager.Instance.HandleMove(currentContainer, targetContainer);
 
         targetContainer = null;
-
-        transform.position = currentContainer.transform.position;
     }
 
-    public bool CheckMerge(ItemContainer targetContainer)
+    public void SetContainer(ItemContainer itemContainer)
     {
-        if (targetContainer != null)
-        {
-            return true;
-        }
+        currentContainer = itemContainer;
+        ResetPosition();
+    }
 
-        return false;
+    public void ResetPosition()
+    {
+        transform.position = currentContainer.transform.position;
+        transform.SetParent(currentContainer.transform);
     }
 
     public override void OnBeginDrag(PointerEventData eventData)
     {
         base.OnBeginDrag(eventData);
+
+        transform.SetParent(ItemManager.Instance.transform);
     }
 
     public override void OnDrag(PointerEventData eventData)

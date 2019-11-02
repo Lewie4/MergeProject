@@ -6,4 +6,9 @@ using UnityEngine;
 public class ItemScriptableObject : ScriptableObject
 {
     [SerializeField] ItemData itemData;
+
+    public ItemData GetItemData()
+    {
+        return itemData;
+    }
 }

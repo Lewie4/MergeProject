@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemContainer : MonoBehaviour
 {
-    public GameObject item;
+    [SerializeField] private Item item;
 
     private RectTransform rectTransform;
 
@@ -18,13 +18,34 @@ public class ItemContainer : MonoBehaviour
         return rectTransform;
     }
 
-    public void Merge(GameObject oldItem)
+    public Item GetItem()
     {
-        item = oldItem;
+        return item;
     }
 
-    public void Remove()
+    public void SetItem(Item newItem)
     {
-        item = null;
+        item = newItem;
+        item.GetComponent<ItemVisual>().SetContainer(this);
+    }
+
+    public void ResetItemPosition()
+    {
+        item.GetComponent<ItemVisual>().ResetPosition();
+    }
+
+    public void UpgradeItem()
+    {
+        SetItemLevel(item.GetLevel() + 1);
+    }
+
+    public void RemoveItem()
+    {
+        SetItemLevel(-1);
+    }
+
+    private void SetItemLevel(int level)
+    {
+        item.SetLevel(level);
     }
 }
