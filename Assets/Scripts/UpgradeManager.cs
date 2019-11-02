@@ -26,27 +26,28 @@ public class UpgradeManager : Singleton<UpgradeManager>
         return 0;
     }
 
-    public float GetUpgradeValue(Upgrade upgrade)
+    private UpgradeScriptableObject GetRelevantUpgrades(Upgrade upgrade)
     {
-        int upgradeLevel = GetUpgradeLevel(upgrade);
-
-        float value = -1;
-
         switch (upgrade)
         {
             case Upgrade.ItemSpawnLevel:
                 {
-                    value = itemSpawnLevels.valueCost[upgradeLevel].x;
-                    break;
+                    return itemSpawnLevels;
                 }
             case Upgrade.ItemSpawnTime:
                 {
-                    value = itemSpawnTimes.valueCost[upgradeLevel].x;
-                    break;
+                    return itemSpawnTimes;
                 }
         }
 
-        return value;
+        return null;
+    }
+
+    public float GetUpgradeValue(Upgrade upgrade)
+    {
+        int upgradeLevel = GetUpgradeLevel(upgrade);
+
+        return GetRelevantUpgrades(upgrade).valueCost[upgradeLevel].x;
     }
 
     public bool TryUpgrade(Upgrade upgrade)
@@ -72,22 +73,16 @@ public class UpgradeManager : Singleton<UpgradeManager>
     {
         int upgradeLevel = GetUpgradeLevel(upgrade) + offset;
 
-        float cost = -1;
+        return upgradeLevel >= GetRelevantUpgrades(upgrade).valueCost.Count ? -1 : GetRelevantUpgrades(upgrade).valueCost[upgradeLevel].y;
+    }
 
-        switch (upgrade)
-        {
-            case Upgrade.ItemSpawnLevel:
-                {
-                    cost = upgradeLevel >= itemSpawnLevels.valueCost.Count ? -1 : itemSpawnLevels.valueCost[upgradeLevel].y;
-                    break;
-                }
-            case Upgrade.ItemSpawnTime:
-                {
-                    cost = upgradeLevel >= itemSpawnTimes.valueCost.Count ? -1 : itemSpawnTimes.valueCost[upgradeLevel].y;
-                    break;
-                }
-        }
+    public Sprite GetSprite(Upgrade upgrade)
+    {
+        return GetRelevantUpgrades(upgrade).sprite;
+    }
 
-        return cost;
+    public string GetDescription(Upgrade upgrade)
+    {
+        return GetRelevantUpgrades(upgrade).description;
     }
 }

@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 2642227014303245904}
   - component: {fileID: 3505320042282124900}
   - component: {fileID: 6090116595512955616}
+  - component: {fileID: 4161411866582134611}
   m_Layer: 5
   m_Name: ItemTimeContentPanel
   m_TagString: Untagged
@@ -166,6 +167,24 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4161411866582134611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521158828233757554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016f426b479daaa449fa7973070bee67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrade: 2
+  button: {fileID: 2157295430748677393}
+  costText: {fileID: 2434592979921884241}
+  image: {fileID: 712444197564487661}
+  levelText: {fileID: 7144890829702202092}
+  descText: {fileID: 1681143500226810798}
 --- !u!1 &945449998179823619
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +900,6 @@ GameObject:
   - component: {fileID: 3480007822653856527}
   - component: {fileID: 7880177285378461884}
   - component: {fileID: 2157295430748677393}
-  - component: {fileID: 4328979229600065698}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -986,7 +1004,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4328979229600065698}
+      - m_Target: {fileID: 4161411866582134611}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -999,20 +1017,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &4328979229600065698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5137536283452368684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 016f426b479daaa449fa7973070bee67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgrade: 2
-  buttonText: {fileID: 2434592979921884241}
 --- !u!1 &5515332185722411829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1028,7 @@ GameObject:
   - component: {fileID: 6291743214001215234}
   - component: {fileID: 2862780976834992400}
   - component: {fileID: 2947514706090382171}
+  - component: {fileID: 1346034903988176453}
   m_Layer: 5
   m_Name: ItemLevelContentPanel
   m_TagString: Untagged
@@ -1090,6 +1095,24 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &1346034903988176453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5515332185722411829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016f426b479daaa449fa7973070bee67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrade: 1
+  button: {fileID: 492927038740310706}
+  costText: {fileID: 1185493933316440268}
+  image: {fileID: 3154544243510413809}
+  levelText: {fileID: 6881745345533371659}
+  descText: {fileID: 2212566014732772813}
 --- !u!1 &5989552046596085738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,7 +1450,6 @@ GameObject:
   - component: {fileID: 7337974428911439943}
   - component: {fileID: 7135624453174358219}
   - component: {fileID: 492927038740310706}
-  - component: {fileID: 2136696262}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1532,7 +1554,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2136696262}
+      - m_Target: {fileID: 1346034903988176453}
         m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
@@ -1545,20 +1567,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2136696262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722789418885912824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 016f426b479daaa449fa7973070bee67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  upgrade: 1
-  buttonText: {fileID: 1185493933316440268}
 --- !u!1 &8877310314811181416
 GameObject:
   m_ObjectHideFlags: 0
