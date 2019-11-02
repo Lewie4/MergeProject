@@ -55,7 +55,7 @@ public class ItemContainer : MonoBehaviour
 
     public void TimePassed(float deltaTime)
     {
-        double softCurrencyToAdd = item.TimePassed(deltaTime) * itemSoftCurrencyBonus;
+        float softCurrencyToAdd = item.TimePassed(deltaTime) * itemSoftCurrencyBonus;
 
         if (softCurrencyToAdd > 0)
         {

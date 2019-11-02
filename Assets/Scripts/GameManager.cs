@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class GameManager : Singleton<GameManager>
 {
     [Header("Soft Currency")]
-    [SerializeField] private double softCurrency;
+    [SerializeField] private float softCurrency;
     [SerializeField] private float softCurrencyMultiplier = 1;
     [SerializeField] private TextMeshProUGUI softCurrencyText;
+    [SerializeField] private TextMeshProUGUI softCurrencyPerSecond;
 
     [Header("Hard Currency")]
     [SerializeField] private int hardCurrency;
@@ -48,10 +49,11 @@ public class GameManager : Singleton<GameManager>
 
     public void CheckSoftCurrency()
     {
-        ItemManager.Instance.CheckSoftCurrency(Time.deltaTime);
+        float SCPS = ItemManager.Instance.CheckSoftCurrency(Time.deltaTime);
+        softCurrencyPerSecond.text = SCPS + "/second";
     }
 
-    public void AddSoftCurrency(double currencyToAdd)
+    public void AddSoftCurrency(float currencyToAdd)
     {
         softCurrency += currencyToAdd * softCurrencyMultiplier;
 

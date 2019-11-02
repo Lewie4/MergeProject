@@ -9,6 +9,6 @@ public class ItemData
     public int itemLevel;
     public Color itemThumbnail;
     public string itemName;
-    public double itemSoftCurrency;
+    public float itemSoftCurrency;
     public float itemTime;
 }

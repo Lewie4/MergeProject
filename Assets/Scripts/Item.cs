@@ -36,7 +36,7 @@ public class Item : MonoBehaviour
         return itemLevel;
     }
 
-    public double TimePassed(float deltaTime)
+    public float TimePassed(float deltaTime)
     {
         if (itemLevel >= 0)
         {
@@ -49,6 +49,15 @@ public class Item : MonoBehaviour
             }
         }
 
+        return 0;
+    }
+
+    public float SoftCurrencyPerSecond()
+    {
+        if (itemLevel >= 0)
+        {
+            return itemData.itemSoftCurrency / itemData.itemTime;
+        }
         return 0;
     }
 }
