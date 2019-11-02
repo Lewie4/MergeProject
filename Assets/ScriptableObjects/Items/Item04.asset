@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Item04
   m_EditorClassIdentifier: 
   itemData:
-    itemLevel: 0
-    itemThumbnail: {r: 0, g: 0, b: 0, a: 0}
+    itemLevel: 3
+    itemThumbnail: {r: 1, g: 1, b: 0, a: 1}
     itemName: Forth
     itemSoftCurrency: 8
     itemTime: 1
