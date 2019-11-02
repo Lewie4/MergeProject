@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -15,7 +16,9 @@ public class GameManager : Singleton<GameManager>
 
     [Header("Items")]
     [SerializeField] private float itemSpawnTime = 5f;
-    [SerializeField] private int itemSpawnLevel;    
+    [SerializeField] private int itemSpawnLevel;
+    [SerializeField] private float itemSpeedUpPercentage = 0.1f;
+    [SerializeField] private Slider itemSpawnSlider;
 
     private float nextSpawnTime;
 
@@ -34,6 +37,13 @@ public class GameManager : Singleton<GameManager>
             nextSpawnTime -= itemSpawnTime;
             ItemManager.Instance.SpawnItem(itemSpawnLevel);
         }
+
+        itemSpawnSlider.value = nextSpawnTime / itemSpawnTime;
+    }
+
+    public void SpeedUpSpawn()
+    {
+        nextSpawnTime += itemSpawnTime * itemSpeedUpPercentage;
     }
 
     public void CheckSoftCurrency()
