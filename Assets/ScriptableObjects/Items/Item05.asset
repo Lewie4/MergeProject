@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Item05
   m_EditorClassIdentifier: 
   itemData:
-    itemID: 4
-    itemThumbnail: {fileID: 0}
+    itemLevel: 0
+    itemThumbnail: {r: 0, g: 0, b: 0, a: 0}
     itemName: Fifth
-    itemValue: 160
+    itemSoftCurrency: 16
     itemTime: 1

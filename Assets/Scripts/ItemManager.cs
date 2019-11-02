@@ -45,17 +45,24 @@ public class ItemManager : Singleton<ItemManager>
         return itemScriptableObjects[itemLevel].GetItemData();
     }
 
-    [ContextMenu("Spawn Item")]
-    public void SpawnItem()//int level = 0)
+    public void SpawnItem(int level = 0)
     {
         foreach(ItemContainer itemContainer in itemContainers)
         {
             Item item = itemContainer.GetItem();
             if (item.GetLevel() < 0)
             {
-                item.SetLevel(0);// level);
+                item.SetLevel(level);
                 break;
             }
+        }
+    }
+
+    public void CheckSoftCurrency(float deltaTime)
+    {
+        foreach (ItemContainer itemContainer in itemContainers)
+        {
+            itemContainer.TimePassed(deltaTime);
         }
     }
 }

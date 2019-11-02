@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     [SerializeField] private Image itemImage;
 
     private ItemData itemData;
+    private float itemSoftCurrencyTime;
 
     private void Start()
     {
@@ -33,5 +34,21 @@ public class Item : MonoBehaviour
     public int GetLevel()
     {
         return itemLevel;
+    }
+
+    public double TimePassed(float deltaTime)
+    {
+        if (itemLevel >= 0)
+        {
+            itemSoftCurrencyTime += deltaTime;
+
+            if (itemSoftCurrencyTime >= itemData.itemTime)
+            {
+                itemSoftCurrencyTime -= itemData.itemTime;
+                return itemData.itemSoftCurrency;
+            }
+        }
+
+        return 0;
     }
 }

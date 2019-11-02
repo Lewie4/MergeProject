@@ -16,5 +16,5 @@ MonoBehaviour:
     itemLevel: 0
     itemThumbnail: {r: 0, g: 1, b: 0, a: 1}
     itemName: Second
-    itemValue: 20
+    itemSoftCurrency: 2
     itemTime: 1
