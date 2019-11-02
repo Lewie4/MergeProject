@@ -32,14 +32,15 @@ public class GameManager : Singleton<GameManager>
     private void CheckItemSpawn()
     {
         nextSpawnTime += Time.deltaTime;
+        float spawnTime = itemSpawnTime - UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnTime);
 
-        if (nextSpawnTime >= itemSpawnTime)
+        if (nextSpawnTime >= spawnTime)
         {
-            nextSpawnTime -= itemSpawnTime;
-            ItemManager.Instance.SpawnItem(UpgradeManager.Instance.GetUpgradeLevel(Upgrade.ItemSpawnLevel));
+            nextSpawnTime -= spawnTime;
+            ItemManager.Instance.SpawnItem((int)UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnLevel));
         }
 
-        itemSpawnSlider.value = nextSpawnTime / itemSpawnTime;
+        itemSpawnSlider.value = nextSpawnTime / spawnTime;
     }
 
     public void SpeedUpSpawn()

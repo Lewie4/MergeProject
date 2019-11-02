@@ -23,7 +23,7 @@ public class UpgradeButton : MonoBehaviour
 
     private void RefreshCost()
     {
-        float cost = UpgradeManager.Instance.GetCost(upgrade);
+        float cost = UpgradeManager.Instance.GetCost(upgrade, 1);
 
         if (cost >= 0)
         {
@@ -31,6 +31,7 @@ public class UpgradeButton : MonoBehaviour
         }
         else
         {
+            buttonText.text = "Max Level";
             button.interactable = false;
         }
     }
