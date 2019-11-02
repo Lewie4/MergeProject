@@ -52,7 +52,7 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     public bool TryUpgrade(Upgrade upgrade)
     {
-        float cost = GetCost(upgrade);
+        float cost = GetCost(upgrade, 1);
 
         return GameManager.Instance.TryPurchase(cost, () => UpgradeSuccessful(upgrade));
     }
