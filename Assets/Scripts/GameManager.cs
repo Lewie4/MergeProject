@@ -58,10 +58,7 @@ public class GameManager : Singleton<GameManager>
     {
         softCurrency += currencyToAdd * softCurrencyMultiplier;
 
-        if (softCurrencyText != null)
-        {
-            softCurrencyText.text = softCurrency.ToString();
-        }
+        UpdateSoftCurrencyText();
     }
 
     public bool TryPurchase(float cost, Action success)
@@ -69,10 +66,16 @@ public class GameManager : Singleton<GameManager>
         if (softCurrency >= cost)
         {
             softCurrency -= cost;
+            UpdateSoftCurrencyText();
             success.Invoke();
             return true;
         }
         //Show not enough currency popup
         return false;
+    }
+
+    private void UpdateSoftCurrencyText()
+    {
+        softCurrencyText.text = softCurrency.ToString();
     }
 }
