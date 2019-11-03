@@ -31,11 +31,13 @@ public class Item : MonoBehaviour
         if (itemLevel < 0)
         {
             itemImage.sprite = null;
+            itemImage.enabled = false;
         }
         else
-        {
+        {            
             itemData = ItemManager.Instance.GetItemData(itemLevel);
             itemImage.sprite = itemData.itemThumbnail;
+            itemImage.enabled = true;
         }
     }
 
