@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemData:
     itemLevel: 2
-    itemThumbnail: {fileID: 21300000, guid: 8a08a60017f004fec9cbcde3fda25df7, type: 3}
+    itemThumbnail: {fileID: 21300000, guid: e4c912e795a5da9409e92d2b66d7e95e, type: 3}
     itemName: Third
     itemSoftCurrency: 4
     itemTime: 1
