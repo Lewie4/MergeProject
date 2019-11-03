@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34de51368ac9d3c4e864be154fe6f90b, type: 3}
   m_Name: ItemSpawnLevels
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 08b45db4954d3c54288f0e38a632e304, type: 3}
   description: Test Spawn Levels
   valueCost:
   - {x: 0, y: 0}
