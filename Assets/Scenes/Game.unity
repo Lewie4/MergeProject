@@ -701,6 +701,8 @@ GameObject:
   - component: {fileID: 2098104941}
   - component: {fileID: 2098104942}
   - component: {fileID: 2098104943}
+  - component: {fileID: 2098104945}
+  - component: {fileID: 2098104944}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -756,6 +758,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSpawnLevels: {fileID: 11400000, guid: bee43800678a9ba4bbff79eb6f6c4f11, type: 2}
   itemSpawnTimes: {fileID: 11400000, guid: 3b97f2908bff67141bf5d91524f88517, type: 2}
+--- !u!114 &2098104944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098104940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76deb7629637b244ba03ddc972010abc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2098104945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098104940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b1ff69194a0eb47870f74ad1fe36ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  adProvider: {fileID: 2098104944}
 --- !u!1001 &2136696258
 PrefabInstance:
   m_ObjectHideFlags: 0

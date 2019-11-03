@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    public static float CurrencyTime = 5f;
+    public static float CurrencyTime = 1f;
 
     public List<ItemScriptableObject> itemScriptableObjects;
     public List<Item> items;
