@@ -626,7 +626,7 @@ PrefabInstance:
     - target: {fileID: 7276704243528970230, guid: 8c4ca2a59b2b14c4e8a33b685221fb26,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7276704243528970230, guid: 8c4ca2a59b2b14c4e8a33b685221fb26,
         type: 3}
@@ -637,16 +637,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2098104946}
+      objectReference: {fileID: 706872327}
     - target: {fileID: 7276704243528970230, guid: 8c4ca2a59b2b14c4e8a33b685221fb26,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActivateTempBoost
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7276704243528970230, guid: 8c4ca2a59b2b14c4e8a33b685221fb26,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276704243528970230, guid: 8c4ca2a59b2b14c4e8a33b685221fb26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c4ca2a59b2b14c4e8a33b685221fb26, type: 3}
@@ -1219,6 +1224,61 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2098104946}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ActivateTempBoost
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 706872327}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2e75c8bdc4049c4f8493ce39df1df26, type: 3}
