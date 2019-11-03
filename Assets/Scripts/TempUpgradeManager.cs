@@ -19,7 +19,7 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
     [SerializeField] Vector2 spawnTime;
     [SerializeField] float recheckTime;
     [SerializeField] GameObject button;
-    [SerializeField] GameObject boostIcon;
+    [SerializeField] Image boostIcon;
     [SerializeField] Image boostTimeImage;
 
     private bool ready;
@@ -61,7 +61,7 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
                 active = false;
                 ready = false;
                 selectedTempUpgrade = null;
-                boostIcon.SetActive(false);
+                boostTimeImage.gameObject.SetActive(false);
             }
         }
     }
@@ -71,8 +71,9 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
         active = true;
         remainingTime = selectedTempUpgrade.duration;
         button.SetActive(false);
-        boostIcon.SetActive(true);
+        boostIcon.sprite = selectedTempUpgrade.sprite;
         boostTimeImage.fillAmount = 1;
+        boostTimeImage.gameObject.SetActive(true);        
     }
 
     public float GetTempBoostMultiplier(TempUpgrade upgradeType)
@@ -82,6 +83,13 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
             return selectedTempUpgrade.power;
         }
 
-        return 1;
+        switch (upgradeType)
+        {
+            case TempUpgrade.ItemSpawnLevel:
+                return 0;
+            default:
+                return 1;
+        }
+
     }
 }

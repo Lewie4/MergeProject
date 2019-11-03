@@ -37,7 +37,7 @@ public class GameManager : Singleton<GameManager>
         if (nextSpawnTime >= spawnTime)
         {
             nextSpawnTime -= spawnTime;
-            ItemManager.Instance.SpawnItem((int)UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnLevel));
+            ItemManager.Instance.SpawnItem((int)UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnLevel) + ((int)TempUpgradeManager.Instance.GetTempBoostMultiplier(TempUpgrade.ItemSpawnLevel)));
         }
 
         itemSpawnSlider.value = nextSpawnTime / spawnTime;
