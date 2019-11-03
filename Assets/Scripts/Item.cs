@@ -52,14 +52,18 @@ public class Item : MonoBehaviour
         {
             itemSoftCurrencyTime += deltaTime;
 
-            if (itemSoftCurrencyTime >= itemData.itemTime)
+            if (itemSoftCurrencyTime >= ItemManager.CurrencyTime)
             {
-                itemSoftCurrencyTime -= itemData.itemTime;
+                itemSoftCurrencyTime -= ItemManager.CurrencyTime;
 
-                float softCurrencyToAdd = itemData.itemSoftCurrency; //Container bonus? * itemSoftCurrencyBonus;
+                float softCurrencyToAdd = ItemManager.GetCurrencyForLevel(itemLevel); //Container bonus? * itemSoftCurrencyBonus;
                 GameManager.Instance.AddSoftCurrency(softCurrencyToAdd);
                 text.GainCurrency(softCurrencyToAdd.ToString());
             }
+        }
+        else if (itemSoftCurrencyTime > 0)
+        {
+            itemSoftCurrencyTime = 0;
         }
     }
 
@@ -67,7 +71,7 @@ public class Item : MonoBehaviour
     {
         if (itemLevel >= 0)
         {
-            return itemData.itemSoftCurrency / itemData.itemTime;
+            return ItemManager.GetCurrencyForLevel(itemLevel) / ItemManager.CurrencyTime;
         }
         return 0;
     }

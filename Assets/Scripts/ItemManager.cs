@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
+    public static float CurrencyTime = 5f;
+
     public List<ItemScriptableObject> itemScriptableObjects;
     public List<Item> items;
 
@@ -23,9 +25,12 @@ public class ItemManager : Singleton<ItemManager>
             else
             {
                 //Switch
-                ItemContainer oldContainer = currentItem.GetItemContainer();
-                currentItem.SetItemContainer(targetItem.GetItemContainer());
-                targetItem.SetItemContainer(oldContainer);
+                int targetLevel = targetItem.GetLevel();
+                targetItem.SetLevel(currentItem.GetLevel());
+                targetItem.ResetPosition();
+
+                currentItem.SetLevel(targetLevel);
+                currentItem.ResetPosition();
             }
         }
     }
@@ -68,5 +73,10 @@ public class ItemManager : Singleton<ItemManager>
         }
 
         return softCurrencyPerSecond;
+    }
+
+    public static float GetCurrencyForLevel(int level)
+    {
+        return Mathf.Pow(2, level + 1);
     }
 }

@@ -9,6 +9,4 @@ public class ItemData
     public int itemLevel;
     public Sprite itemThumbnail;
     public string itemName;
-    public float itemSoftCurrency;
-    public float itemTime;
 }
