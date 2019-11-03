@@ -20,7 +20,7 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
     [SerializeField] float recheckTime;
     [SerializeField] GameObject button;
     [SerializeField] GameObject boostIcon;
-    [SerializeField] Slider boostSlider;
+    [SerializeField] Image boostTimeImage;
 
     private bool ready;
     private bool active;
@@ -54,7 +54,7 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
         {
             remainingTime -= Time.deltaTime;
 
-            boostSlider.value = remainingTime / selectedTempUpgrade.duration;
+            boostTimeImage.fillAmount = remainingTime / selectedTempUpgrade.duration;
 
             if(remainingTime <= 0)
             {
@@ -72,7 +72,7 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
         remainingTime = selectedTempUpgrade.duration;
         button.SetActive(false);
         boostIcon.SetActive(true);
-        boostSlider.value = 1;
+        boostTimeImage.fillAmount = 1;
     }
 
     public float GetTempBoostMultiplier(TempUpgrade upgradeType)
