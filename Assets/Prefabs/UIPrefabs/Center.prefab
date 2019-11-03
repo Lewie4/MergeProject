@@ -226,15 +226,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 163c737a06e84bc4695f5d63cf768360, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8835c79a0686729419cb53396fc87b90, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -358,6 +358,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -521,6 +532,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -682,6 +704,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -845,6 +878,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1006,6 +1050,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -1169,6 +1224,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1330,6 +1396,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -1493,6 +1570,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1654,6 +1742,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -1817,6 +1916,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1978,6 +2088,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -2141,6 +2262,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2303,6 +2435,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2464,6 +2607,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8567398050929437587, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -2632,6 +2786,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2793,6 +2958,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -2956,6 +3132,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3117,6 +3304,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -3280,6 +3478,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3441,6 +3650,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -3604,6 +3824,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3765,6 +3996,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
@@ -3928,6 +4170,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3766626e200b015429466d815cafc9be, type: 3}
 --- !u!114 &2157494811772636858 stripped
@@ -4064,6 +4317,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8af3c02aa52428459388145566f3b47,
+        type: 3}
+    - target: {fileID: 6249927291460280806, guid: 3766626e200b015429466d815cafc9be,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6790277268507463720, guid: 3766626e200b015429466d815cafc9be,
         type: 3}
