@@ -1395,7 +1395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempUpgradeScriptableObjects:
-  - {fileID: 11400000, guid: 7af47a94471454a4180cd6d5920e5442, type: 2}
+  - {fileID: 11400000, guid: 692ee982e2b519c45a6aa97476a4b596, type: 2}
   spawnTime: {x: 1, y: 5}
   recheckTime: 10
   button: {fileID: 623120081}

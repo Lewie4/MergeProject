@@ -86,6 +86,7 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
         switch (upgradeType)
         {
             case TempUpgrade.ItemSpawnLevel:
+            case TempUpgrade.ItemMergeLevel:
                 return 0;
             default:
                 return 1;

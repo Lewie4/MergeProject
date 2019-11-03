@@ -16,7 +16,7 @@ public class ItemManager : Singleton<ItemManager>
             if(CheckMerge(currentItem, targetItem))
             {
                 //Merge
-                targetItem.SetLevel(targetItem.GetLevel() + 1);
+                targetItem.SetLevel(targetItem.GetLevel() + 1 + (int)TempUpgradeManager.Instance.GetTempBoostMultiplier(TempUpgrade.ItemMergeLevel));
                 targetItem.ResetPosition();
 
                 currentItem.SetLevel(-1);

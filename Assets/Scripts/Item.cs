@@ -56,7 +56,7 @@ public class Item : MonoBehaviour
             {
                 itemSoftCurrencyTime -= ItemManager.CurrencyTime;
 
-                float softCurrencyToAdd = ItemManager.GetCurrencyForLevel(itemLevel); //Container bonus? * itemSoftCurrencyBonus;
+                float softCurrencyToAdd = CalculateSoftCurrency();
                 GameManager.Instance.AddSoftCurrency(softCurrencyToAdd);
                 text.GainCurrency(softCurrencyToAdd.ToString());
             }
@@ -67,11 +67,16 @@ public class Item : MonoBehaviour
         }
     }
 
+    private float CalculateSoftCurrency()
+    {
+        return ItemManager.GetCurrencyForLevel(itemLevel) * TempUpgradeManager.Instance.GetTempBoostMultiplier(TempUpgrade.GoldMult); //Container bonus? * itemSoftCurrencyBonus;
+    }
+
     public float SoftCurrencyPerSecond()
     {
         if (itemLevel >= 0)
         {
-            return ItemManager.GetCurrencyForLevel(itemLevel) / ItemManager.CurrencyTime;
+            return CalculateSoftCurrency() / ItemManager.CurrencyTime;
         }
         return 0;
     }
