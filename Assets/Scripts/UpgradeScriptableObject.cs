@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Upgrade", order = 2)]
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Upgrade")]
 public class UpgradeScriptableObject : ScriptableObject
 {
     public Sprite sprite;
