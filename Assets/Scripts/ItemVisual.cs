@@ -8,6 +8,7 @@ public class ItemVisual : EventTrigger
     [SerializeField] Item targetItem;
 
     private Item item;
+    private bool isMoving;
 
     private void Awake()
     {
@@ -37,23 +38,31 @@ public class ItemVisual : EventTrigger
     {
         base.OnBeginDrag(eventData);
 
-        transform.SetParent(ItemManager.Instance.transform);
+        if (item.GetLevel() >= 0)
+        {
+            isMoving = true;
+            transform.SetParent(ItemManager.Instance.transform);
+        }
     }
 
     public override void OnDrag(PointerEventData eventData)
     {
         base.OnDrag(eventData);
-        transform.position += (Vector3)eventData.delta;
 
-        foreach(Item item in ItemManager.Instance.items)
+        if (isMoving)
         {
-            if(RectTransformUtility.RectangleContainsScreenPoint(item.GetContainerTransform(), Input.mousePosition))
-            {
-                targetItem = item;
-                break;
-            }
+            transform.position += (Vector3)eventData.delta;
 
-            targetItem = null;
+            foreach (Item item in ItemManager.Instance.items)
+            {
+                if (RectTransformUtility.RectangleContainsScreenPoint(item.GetContainerTransform(), Input.mousePosition))
+                {
+                    targetItem = item;
+                    break;
+                }
+
+                targetItem = null;
+            }
         }
     }
 
@@ -61,6 +70,11 @@ public class ItemVisual : EventTrigger
     {
         base.OnEndDrag(eventData);
 
-        Move();
+        if (isMoving)
+        {
+            Move();
+        }
+
+        isMoving = false;
     }
 }
