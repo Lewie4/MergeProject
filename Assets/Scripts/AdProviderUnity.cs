@@ -38,7 +38,7 @@ public class AdProviderUnity : AdProvider
     {
         if (result == ShowResult.Finished)
         {
-            // Reward the player
+            AdManager.Instance.Success();
         }
         else if (result == ShowResult.Skipped)
         {
