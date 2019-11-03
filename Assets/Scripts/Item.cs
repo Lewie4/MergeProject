@@ -7,9 +7,17 @@ public class Item : MonoBehaviour
 {
     [SerializeField] private int itemLevel = -1;
     [SerializeField] private Image itemImage;
+    [SerializeField] private CurrencyText text;
+    [SerializeField] private ItemContainer itemContainer;
 
     private ItemData itemData;
     private float itemSoftCurrencyTime;
+    private ItemVisual itemVisual;
+
+    private void Awake()
+    {
+        itemVisual = GetComponent<ItemVisual>();
+    }
 
     private void Start()
     {
@@ -36,8 +44,8 @@ public class Item : MonoBehaviour
         return itemLevel;
     }
 
-    public float TimePassed(float deltaTime)
-    {
+    public void TimePassed(float deltaTime)
+    {  
         if (itemLevel >= 0)
         {
             itemSoftCurrencyTime += deltaTime;
@@ -45,11 +53,12 @@ public class Item : MonoBehaviour
             if (itemSoftCurrencyTime >= itemData.itemTime)
             {
                 itemSoftCurrencyTime -= itemData.itemTime;
-                return itemData.itemSoftCurrency;
+
+                float softCurrencyToAdd = itemData.itemSoftCurrency; //Container bonus? * itemSoftCurrencyBonus;
+                GameManager.Instance.AddSoftCurrency(softCurrencyToAdd);
+                text.GainCurrency(softCurrencyToAdd.ToString());
             }
         }
-
-        return 0;
     }
 
     public float SoftCurrencyPerSecond()
@@ -59,5 +68,26 @@ public class Item : MonoBehaviour
             return itemData.itemSoftCurrency / itemData.itemTime;
         }
         return 0;
+    }
+
+    public void ResetPosition()
+    {
+        itemVisual.ResetPosition();
+    }
+
+    public ItemContainer GetItemContainer()
+    {
+        return itemContainer;
+    }
+
+    public void SetItemContainer(ItemContainer newContainer)
+    {
+        itemContainer = newContainer;
+        ResetPosition();
+    }
+
+    public RectTransform GetContainerTransform()
+    {
+        return itemContainer.GetRectTransform();
     }
 }

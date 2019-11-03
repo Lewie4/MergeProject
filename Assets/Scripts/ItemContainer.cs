@@ -5,10 +5,6 @@ using TMPro;
 
 public class ItemContainer : MonoBehaviour
 {
-    [SerializeField] private Item item;
-    [SerializeField] private CurrencyText text;
-
-
     private RectTransform rectTransform;
     private float itemSoftCurrencyBonus = 1;
 
@@ -22,45 +18,4 @@ public class ItemContainer : MonoBehaviour
         return rectTransform;
     }
 
-    public Item GetItem()
-    {
-        return item;
-    }
-
-    public void SetItem(Item newItem)
-    {
-        item = newItem;
-        item.GetComponent<ItemVisual>().SetContainer(this);
-    }
-
-    public void ResetItemPosition()
-    {
-        item.GetComponent<ItemVisual>().ResetPosition();
-    }
-
-    public void UpgradeItem()
-    {
-        SetItemLevel(item.GetLevel() + 1);
-    }
-
-    public void RemoveItem()
-    {
-        SetItemLevel(-1);
-    }
-
-    private void SetItemLevel(int level)
-    {
-        item.SetLevel(level);
-    }
-
-    public void TimePassed(float deltaTime)
-    {
-        float softCurrencyToAdd = item.TimePassed(deltaTime) * itemSoftCurrencyBonus;
-
-        if (softCurrencyToAdd > 0)
-        {
-            GameManager.Instance.AddSoftCurrency(softCurrencyToAdd);
-            text.GainCurrency(softCurrencyToAdd.ToString());
-        }
-    }
 }

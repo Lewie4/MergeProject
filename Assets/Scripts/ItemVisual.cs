@@ -5,37 +5,32 @@ using UnityEngine.EventSystems;
 
 public class ItemVisual : EventTrigger
 {
-    [SerializeField] ItemContainer currentContainer;
-    [SerializeField] ItemContainer targetContainer;
+    [SerializeField] Item targetItem;
 
-    private void Start()
+    private Item item;
+
+    private void Awake()
     {
-        currentContainer = transform.parent.gameObject.GetComponent<ItemContainer>();
+        item = GetComponent<Item>();
     }
 
     private void Move()
     {
-        if(targetContainer == null || targetContainer == currentContainer)
+        if(targetItem == null || targetItem == item)
         {
-            SetContainer(currentContainer);
+            ResetPosition();            
             return;
         }
 
-        ItemManager.Instance.HandleMove(currentContainer, targetContainer);
+        ItemManager.Instance.HandleMove(item, targetItem);
 
-        targetContainer = null;
-    }
-
-    public void SetContainer(ItemContainer itemContainer)
-    {
-        currentContainer = itemContainer;
-        ResetPosition();
+        targetItem = null;
     }
 
     public void ResetPosition()
     {
-        transform.position = currentContainer.transform.position;
-        transform.SetParent(currentContainer.transform);
+        transform.position = item.GetItemContainer().transform.position;
+        transform.SetParent(item.GetItemContainer().transform);
     }
 
     public override void OnBeginDrag(PointerEventData eventData)
@@ -50,15 +45,15 @@ public class ItemVisual : EventTrigger
         base.OnDrag(eventData);
         transform.position += (Vector3)eventData.delta;
 
-        foreach(ItemContainer itemContainer in ItemManager.Instance.itemContainers)
+        foreach(Item item in ItemManager.Instance.items)
         {
-            if(RectTransformUtility.RectangleContainsScreenPoint(itemContainer.GetRectTransform(), Input.mousePosition))
+            if(RectTransformUtility.RectangleContainsScreenPoint(item.GetContainerTransform(), Input.mousePosition))
             {
-                targetContainer = itemContainer;
+                targetItem = item;
                 break;
             }
 
-            targetContainer = null;
+            targetItem = null;
         }
     }
 

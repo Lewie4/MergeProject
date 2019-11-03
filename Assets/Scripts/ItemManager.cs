@@ -5,34 +5,34 @@ using UnityEngine;
 public class ItemManager : Singleton<ItemManager>
 {
     public List<ItemScriptableObject> itemScriptableObjects;
-    public List<ItemContainer> itemContainers;
+    public List<Item> items;
 
-    public void HandleMove(ItemContainer currentContainer, ItemContainer targetContainer)
+    public void HandleMove(Item currentItem, Item targetItem)
     {
-        if (currentContainer != targetContainer)
+        if (currentItem != targetItem)
         {
-            if(CheckMerge(currentContainer, targetContainer))
+            if(CheckMerge(currentItem, targetItem))
             {
                 //Merge
-                targetContainer.UpgradeItem();
-                targetContainer.ResetItemPosition();
+                targetItem.SetLevel(targetItem.GetLevel() + 1);
+                targetItem.ResetPosition();
 
-                currentContainer.RemoveItem();
-                currentContainer.ResetItemPosition();
+                currentItem.SetLevel(-1);
+                currentItem.ResetPosition();
             }
             else
             {
                 //Switch
-                Item oldItem = currentContainer.GetItem();
-                currentContainer.SetItem(targetContainer.GetItem());
-                targetContainer.SetItem(oldItem);
+                ItemContainer oldContainer = currentItem.GetItemContainer();
+                currentItem.SetItemContainer(targetItem.GetItemContainer());
+                targetItem.SetItemContainer(oldContainer);
             }
         }
     }
 
-    private bool CheckMerge(ItemContainer currentContainer, ItemContainer targetContainer)
+    private bool CheckMerge(Item currentItem, Item targetItem)
     {
-        if (targetContainer.GetItem().GetLevel() == currentContainer.GetItem().GetLevel())
+        if (currentItem.GetLevel() == targetItem.GetLevel())
         {
             return true;
         }
@@ -47,9 +47,8 @@ public class ItemManager : Singleton<ItemManager>
 
     public void SpawnItem(int level = 0)
     {
-        foreach(ItemContainer itemContainer in itemContainers)
+        foreach(Item item in items)
         {
-            Item item = itemContainer.GetItem();
             if (item.GetLevel() < 0)
             {
                 item.SetLevel(level);
@@ -62,10 +61,10 @@ public class ItemManager : Singleton<ItemManager>
     {
         float softCurrencyPerSecond = 0;
 
-        foreach (ItemContainer itemContainer in itemContainers)
+        foreach (Item item in items)
         {
-            itemContainer.TimePassed(deltaTime);
-            softCurrencyPerSecond += itemContainer.GetItem().SoftCurrencyPerSecond();
+            item.TimePassed(deltaTime);
+            softCurrencyPerSecond += item.SoftCurrencyPerSecond();
         }
 
         return softCurrencyPerSecond;
