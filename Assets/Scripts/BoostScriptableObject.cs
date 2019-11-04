@@ -7,7 +7,7 @@ public class BoostScriptableObject : ScriptableObject
 {
     public Sprite sprite;
     public string description;
-    public Boost upgradeType;
+    public Boost boostType;
     public float power;
     public float duration;
     public float adPower;

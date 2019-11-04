@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 08c304e1f61a28e44a77bfef2813eb87, type: 3}
   description: Test cream merge level
-  upgradeType: 3
+  boostType: 3
   power: 1
   duration: 15
   adPower: 2

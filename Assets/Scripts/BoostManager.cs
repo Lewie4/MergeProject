@@ -9,7 +9,8 @@ public enum Boost
     ItemSpawnLevel,
     ItemSpawnTime,
     ItemMergeLevel,
-    GoldMult
+    GoldMult,
+    GoldBonus
 }
 
 public class BoostManager : Singleton<BoostManager>
@@ -74,18 +75,25 @@ public class BoostManager : Singleton<BoostManager>
 
     public void ActivateBoost(bool advertWatched = false)
     {
-        active = true;
-        adWatched = advertWatched;
-        remainingTime = adWatched ? selectedBoost.adDuration : selectedBoost.duration;
-        button.SetActive(false);
-        boostIcon.sprite = selectedBoost.sprite;
-        boostTimeImage.fillAmount = 1;
-        boostTimeImage.gameObject.SetActive(true);        
+        if (selectedBoost.boostType == Boost.GoldBonus)
+        {
+            GameManager.Instance.AddSoftCurrencyTime(advertWatched ? selectedBoost.adPower : selectedBoost.power);
+        }
+        else
+        {
+            active = true;
+            adWatched = advertWatched;
+            remainingTime = adWatched ? selectedBoost.adDuration : selectedBoost.duration;
+            button.SetActive(false);
+            boostIcon.sprite = selectedBoost.sprite;
+            boostTimeImage.fillAmount = 1;
+            boostTimeImage.gameObject.SetActive(true);
+        }
     }
 
     public float GetBoostMultiplier(Boost upgradeType)
     {
-        if(active && selectedBoost != null && upgradeType == selectedBoost.upgradeType)
+        if(active && selectedBoost != null && upgradeType == selectedBoost.boostType)
         {
             return adWatched ? selectedBoost.adPower : selectedBoost.power;
         }

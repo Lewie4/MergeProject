@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 406e89c482e2de3499e25a3020d1e340, type: 3}
   description: Test fish gold mult
-  upgradeType: 4
+  boostType: 4
   power: 5
   duration: 20
   adPower: 10
