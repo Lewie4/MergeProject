@@ -75,16 +75,17 @@ public class BoostManager : Singleton<BoostManager>
 
     public void ActivateBoost(bool advertWatched = false)
     {
+        active = true;
+        remainingTime = adWatched ? selectedBoost.adDuration : selectedBoost.duration;
+        button.SetActive(false);
+
         if (selectedBoost.boostType == Boost.GoldBonus)
         {
             GameManager.Instance.AddSoftCurrencyTime(advertWatched ? selectedBoost.adPower : selectedBoost.power);
         }
         else
-        {
-            active = true;
-            adWatched = advertWatched;
-            remainingTime = adWatched ? selectedBoost.adDuration : selectedBoost.duration;
-            button.SetActive(false);
+        {            
+            adWatched = advertWatched;        
             boostIcon.sprite = selectedBoost.sprite;
             boostTimeImage.fillAmount = 1;
             boostTimeImage.gameObject.SetActive(true);
