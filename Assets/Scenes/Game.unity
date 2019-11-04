@@ -1075,10 +1075,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSpawnLevels: {fileID: 11400000, guid: bee43800678a9ba4bbff79eb6f6c4f11, type: 2}
   itemSpawnTimes: {fileID: 11400000, guid: 3b97f2908bff67141bf5d91524f88517, type: 2}
-  itemMergeLevels: {fileID: 0}
-  itemDoubleSpawns: {fileID: 0}
-  itemSpawnHigherLevels: {fileID: 0}
-  GoldMults: {fileID: 0}
+  itemMergeLevels: {fileID: 11400000, guid: 8de1111e1381df04ca9e799745a6832d, type: 2}
+  itemDoubleSpawns: {fileID: 11400000, guid: 5173cb593b346c2469ac142731f01064, type: 2}
+  itemSpawnHigherLevels: {fileID: 11400000, guid: af9a0f114be47a2459b27c175116db56,
+    type: 2}
+  GoldMults: {fileID: 11400000, guid: f84054abaf4755a4598ce1ac79064867, type: 2}
 --- !u!114 &2098104944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,6 +1122,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3264ad35a678eb5418c5c74162285cfe, type: 2}
   - {fileID: 11400000, guid: 7af47a94471454a4180cd6d5920e5442, type: 2}
   - {fileID: 11400000, guid: 73dcfa639555b4b4a89bdd3946ca852c, type: 2}
+  - {fileID: 11400000, guid: a7e42a37852c0e448a525a202d390e16, type: 2}
   spawnTime: {x: 1, y: 5}
   recheckTime: 10
   button: {fileID: 623120081}
