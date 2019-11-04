@@ -17,7 +17,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private int hardCurrency;
 
     [Header("Items")]
-    [SerializeField] private float itemSpawnTime = 5f;
     [SerializeField] private float itemSpeedUpPercentage = 0.1f;
     [SerializeField] private Slider itemSpawnSlider;
 
@@ -32,7 +31,7 @@ public class GameManager : Singleton<GameManager>
     private void CheckItemSpawn()
     {
         nextSpawnTime += Time.deltaTime;
-        float spawnTime = (itemSpawnTime - UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnTime)) / BoostManager.Instance.GetBoostMultiplier(Boost.ItemSpawnTime);
+        float spawnTime = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnTime) / BoostManager.Instance.GetBoostMultiplier(Boost.ItemSpawnTime);
 
         if (nextSpawnTime >= spawnTime)
         {
@@ -45,7 +44,7 @@ public class GameManager : Singleton<GameManager>
 
     public void SpeedUpSpawn()
     {
-        nextSpawnTime += itemSpawnTime * itemSpeedUpPercentage;
+        nextSpawnTime += UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnTime) * itemSpeedUpPercentage;
     }
 
     public void CheckSoftCurrency()
