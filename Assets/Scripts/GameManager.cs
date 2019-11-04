@@ -32,12 +32,12 @@ public class GameManager : Singleton<GameManager>
     private void CheckItemSpawn()
     {
         nextSpawnTime += Time.deltaTime;
-        float spawnTime = (itemSpawnTime - UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnTime)) / TempUpgradeManager.Instance.GetTempBoostMultiplier(TempUpgrade.ItemSpawnTime);
+        float spawnTime = (itemSpawnTime - UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnTime)) / BoostManager.Instance.GetTempBoostMultiplier(Boost.ItemSpawnTime);
 
         if (nextSpawnTime >= spawnTime)
         {
             nextSpawnTime -= spawnTime;
-            ItemManager.Instance.SpawnItem((int)UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnLevel) + ((int)TempUpgradeManager.Instance.GetTempBoostMultiplier(TempUpgrade.ItemSpawnLevel)));
+            ItemManager.Instance.SpawnItem((int)UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnLevel) + ((int)BoostManager.Instance.GetTempBoostMultiplier(Boost.ItemSpawnLevel)));
         }
 
         itemSpawnSlider.value = nextSpawnTime / spawnTime;

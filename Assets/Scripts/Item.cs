@@ -69,7 +69,7 @@ public class Item : MonoBehaviour
 
     private float CalculateSoftCurrency()
     {
-        return ItemManager.GetCurrencyForLevel(itemLevel) * TempUpgradeManager.Instance.GetTempBoostMultiplier(TempUpgrade.GoldMult); //Container bonus? * itemSoftCurrencyBonus;
+        return ItemManager.GetCurrencyForLevel(itemLevel) * BoostManager.Instance.GetTempBoostMultiplier(Boost.GoldMult); //Container bonus? * itemSoftCurrencyBonus;
     }
 
     public float SoftCurrencyPerSecond()

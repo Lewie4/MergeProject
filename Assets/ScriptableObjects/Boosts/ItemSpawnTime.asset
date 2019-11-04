@@ -15,5 +15,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 7f0de40d6a7960d43a8ff57f59d6c0f9, type: 3}
   description: Test cat spawn time
   upgradeType: 2
-  power: 5
+  power: 3
   duration: 10
+  adPower: 5
+  adDuration: 60

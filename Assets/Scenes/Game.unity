@@ -1233,7 +1233,7 @@ PrefabInstance:
     - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
         type: 3}
@@ -1276,6 +1276,66 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 5931991983907813316, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2098104946}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WatchAdForBoost
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 706872327}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848475188495109529, guid: a2e75c8bdc4049c4f8493ce39df1df26,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
@@ -1394,8 +1454,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8faf7659dcc6ab4788e22f426f2d0ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempUpgradeScriptableObjects:
+  Boosts:
   - {fileID: 11400000, guid: 692ee982e2b519c45a6aa97476a4b596, type: 2}
+  - {fileID: 11400000, guid: 3264ad35a678eb5418c5c74162285cfe, type: 2}
+  - {fileID: 11400000, guid: 7af47a94471454a4180cd6d5920e5442, type: 2}
+  - {fileID: 11400000, guid: 73dcfa639555b4b4a89bdd3946ca852c, type: 2}
   spawnTime: {x: 1, y: 5}
   recheckTime: 10
   button: {fileID: 623120081}

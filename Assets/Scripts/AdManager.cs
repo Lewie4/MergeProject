@@ -5,6 +5,9 @@ using System;
 
 public class AdManager : Singleton<AdManager>
 {
+    public const string REWARD = "rewardedVideo";
+    public const string INTERSTITIAL = "video";
+
     [SerializeField] private AdProvider adProvider;
 
     private Action success;
@@ -15,7 +18,7 @@ public class AdManager : Singleton<AdManager>
         return adProvider.IsReady(placement);
     }
 
-    public void ShowAd(string placement, Action success, Action fail)
+    public void ShowAd(string placement, Action success = null, Action fail = null)
     {
         this.success = success;
         this.fail = fail;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum TempUpgrade
+public enum Boost
 {
     None,
     ItemSpawnLevel,
@@ -12,10 +12,9 @@ public enum TempUpgrade
     GoldMult
 }
 
-
-public class TempUpgradeManager : Singleton<TempUpgradeManager>
+public class BoostManager : Singleton<BoostManager>
 {
-    [SerializeField] List<TempUpgradeScriptableObject> tempUpgradeScriptableObjects;
+    [SerializeField] List<BoostScriptableObject> Boosts;
     [SerializeField] Vector2 spawnTime;
     [SerializeField] float recheckTime;
     [SerializeField] GameObject button;
@@ -24,9 +23,10 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
 
     private bool ready;
     private bool active;
+    private bool adWatched;
     private float nextSpawnTime = -1;
     private float currentWaitTime;
-    private TempUpgradeScriptableObject selectedTempUpgrade;
+    private BoostScriptableObject selectedBoost;
     private float remainingTime;
 
     public void Update()
@@ -44,9 +44,9 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
             {
                 currentWaitTime = 0;
                 nextSpawnTime = -1;
-                ready = true;
+                ready = true;                
 
-                selectedTempUpgrade = tempUpgradeScriptableObjects[Random.Range(0, tempUpgradeScriptableObjects.Count)];
+                selectedBoost = Boosts[Random.Range(0, Boosts.Count)];
                 button.SetActive(true);
             }
         }
@@ -54,39 +54,46 @@ public class TempUpgradeManager : Singleton<TempUpgradeManager>
         {
             remainingTime -= Time.deltaTime;
 
-            boostTimeImage.fillAmount = remainingTime / selectedTempUpgrade.duration;
+            boostTimeImage.fillAmount = remainingTime / (adWatched ? selectedBoost.adDuration : selectedBoost.duration);
 
             if(remainingTime <= 0)
             {
                 active = false;
                 ready = false;
-                selectedTempUpgrade = null;
+                adWatched = false;
+                selectedBoost = null;
                 boostTimeImage.gameObject.SetActive(false);
             }
         }
     }
 
-    public void ActivateTempBoost()
+    public void WatchAdForBoost()
+    {
+        AdManager.Instance.ShowAd(AdManager.REWARD, () => ActivateTempBoost(true));
+    }
+
+    public void ActivateTempBoost(bool advertWatched = false)
     {
         active = true;
-        remainingTime = selectedTempUpgrade.duration;
+        adWatched = advertWatched;
+        remainingTime = adWatched ? selectedBoost.adDuration : selectedBoost.duration;
         button.SetActive(false);
-        boostIcon.sprite = selectedTempUpgrade.sprite;
+        boostIcon.sprite = selectedBoost.sprite;
         boostTimeImage.fillAmount = 1;
         boostTimeImage.gameObject.SetActive(true);        
     }
 
-    public float GetTempBoostMultiplier(TempUpgrade upgradeType)
+    public float GetTempBoostMultiplier(Boost upgradeType)
     {
-        if(active && selectedTempUpgrade != null && upgradeType == selectedTempUpgrade.upgradeType)
+        if(active && selectedBoost != null && upgradeType == selectedBoost.upgradeType)
         {
-            return selectedTempUpgrade.power;
+            return adWatched ? selectedBoost.adPower : selectedBoost.power;
         }
 
         switch (upgradeType)
         {
-            case TempUpgrade.ItemSpawnLevel:
-            case TempUpgrade.ItemMergeLevel:
+            case Boost.ItemSpawnLevel:
+            case Boost.ItemMergeLevel:
                 return 0;
             default:
                 return 1;
