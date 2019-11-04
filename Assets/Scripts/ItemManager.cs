@@ -71,13 +71,20 @@ public class ItemManager : Singleton<ItemManager>
         }
     }
 
-    public float CheckSoftCurrency(float deltaTime)
+    public void CheckSoftCurrency(float deltaTime)
+    {
+        foreach (Item item in items)
+        {
+            item.TimePassed(deltaTime);
+        }
+    }
+
+    public float GetSoftCurrencyPerSecond()
     {
         float softCurrencyPerSecond = 0;
 
         foreach (Item item in items)
         {
-            item.TimePassed(deltaTime);
             softCurrencyPerSecond += item.SoftCurrencyPerSecond();
         }
 

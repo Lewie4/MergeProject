@@ -50,14 +50,20 @@ public class GameManager : Singleton<GameManager>
 
     public void CheckSoftCurrency()
     {
-        float SCPS = ItemManager.Instance.CheckSoftCurrency(Time.deltaTime);
-        softCurrencyPerSecond.text = SCPS + "/second";
-    }
+        ItemManager.Instance.CheckSoftCurrency(Time.deltaTime);
+        softCurrencyPerSecond.text = ItemManager.Instance.GetSoftCurrencyPerSecond() + "/second";
+    }    
 
     public void AddSoftCurrency(float currencyToAdd)
     {
         softCurrency += currencyToAdd * softCurrencyMultiplier;
 
+        UpdateSoftCurrencyText();
+    }
+
+    public void AddSoftCurrencyTime(float seconds)
+    {
+        softCurrency += seconds * ItemManager.Instance.GetSoftCurrencyPerSecond();
         UpdateSoftCurrencyText();
     }
 
