@@ -1417,6 +1417,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSpawnLevels: {fileID: 11400000, guid: bee43800678a9ba4bbff79eb6f6c4f11, type: 2}
   itemSpawnTimes: {fileID: 11400000, guid: 3b97f2908bff67141bf5d91524f88517, type: 2}
+  itemMergeLevels: {fileID: 0}
+  itemDoubleSpawns: {fileID: 0}
+  itemSpawnHigherLevels: {fileID: 0}
+  GoldMults: {fileID: 0}
 --- !u!114 &2098104944
 MonoBehaviour:
   m_ObjectHideFlags: 0

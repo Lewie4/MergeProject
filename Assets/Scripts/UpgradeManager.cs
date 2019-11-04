@@ -7,12 +7,20 @@ public enum Upgrade
     None,
     ItemSpawnLevel,
     ItemSpawnTime,
+    ItemMergeLevel,
+    ItemDoubleSpawn,
+    ItemSpawnHigerLevel,
+    GoldMult,
 }
 
 public class UpgradeManager : Singleton<UpgradeManager>
 {
     [SerializeField] private UpgradeScriptableObject itemSpawnLevels;
     [SerializeField] private UpgradeScriptableObject itemSpawnTimes;
+    [SerializeField] private UpgradeScriptableObject itemMergeLevels;
+    [SerializeField] private UpgradeScriptableObject itemDoubleSpawns;
+    [SerializeField] private UpgradeScriptableObject itemSpawnHigherLevels;
+    [SerializeField] private UpgradeScriptableObject GoldMults;
 
     private Dictionary<Upgrade, int> upgrades = new Dictionary<Upgrade, int>();
 
@@ -37,6 +45,22 @@ public class UpgradeManager : Singleton<UpgradeManager>
             case Upgrade.ItemSpawnTime:
                 {
                     return itemSpawnTimes;
+                }
+            case Upgrade.ItemMergeLevel:
+                {
+                    return itemMergeLevels;
+                }
+            case Upgrade.ItemDoubleSpawn:
+                {
+                    return itemDoubleSpawns;
+                }
+            case Upgrade.ItemSpawnHigerLevel:
+                {
+                    return itemSpawnHigherLevels;
+                }
+            case Upgrade.GoldMult:
+                {
+                    return GoldMults;
                 }
         }
 

@@ -69,10 +69,10 @@ public class BoostManager : Singleton<BoostManager>
 
     public void WatchAdForBoost()
     {
-        AdManager.Instance.ShowAd(AdManager.REWARD, () => ActivateTempBoost(true));
+        AdManager.Instance.ShowAd(AdManager.REWARD, () => ActivateBoost(true));
     }
 
-    public void ActivateTempBoost(bool advertWatched = false)
+    public void ActivateBoost(bool advertWatched = false)
     {
         active = true;
         adWatched = advertWatched;
@@ -83,7 +83,7 @@ public class BoostManager : Singleton<BoostManager>
         boostTimeImage.gameObject.SetActive(true);        
     }
 
-    public float GetTempBoostMultiplier(Boost upgradeType)
+    public float GetBoostMultiplier(Boost upgradeType)
     {
         if(active && selectedBoost != null && upgradeType == selectedBoost.upgradeType)
         {

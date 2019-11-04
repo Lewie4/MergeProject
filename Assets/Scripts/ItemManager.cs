@@ -16,7 +16,8 @@ public class ItemManager : Singleton<ItemManager>
             if(CheckMerge(currentItem, targetItem))
             {
                 //Merge
-                targetItem.SetLevel(targetItem.GetLevel() + 1 + (int)BoostManager.Instance.GetTempBoostMultiplier(Boost.ItemMergeLevel));
+                int upgradeBonus = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemMergeLevel) <= Random.Range(0f, 1f) ? 1 : 0;
+                targetItem.SetLevel(targetItem.GetLevel() + 1 + upgradeBonus + (int)BoostManager.Instance.GetBoostMultiplier(Boost.ItemMergeLevel));
                 targetItem.ResetPosition();
 
                 currentItem.SetLevel(-1);
@@ -52,12 +53,20 @@ public class ItemManager : Singleton<ItemManager>
 
     public void SpawnItem(int level = 0)
     {
-        foreach(Item item in items)
+        int itemCount = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemDoubleSpawn) <= Random.Range(0f, 1f) ? 2 : 1;
+
+        foreach (Item item in items)
         {
             if (item.GetLevel() < 0)
             {
-                item.SetLevel(level);
-                break;
+                int upgradeBonus = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnHigerLevel) <= Random.Range(0f, 1f) ? 1 : 0;                
+                item.SetLevel(level + upgradeBonus);
+                itemCount--;
+
+                if (itemCount <= 0)
+                {
+                    break;
+                }
             }
         }
     }
