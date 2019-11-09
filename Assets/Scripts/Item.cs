@@ -57,7 +57,7 @@ public class Item : MonoBehaviour
                 itemSoftCurrencyTime -= ItemManager.CurrencyTime;
 
                 float softCurrencyToAdd = CalculateSoftCurrency();
-                GameManager.Instance.AddSoftCurrency(softCurrencyToAdd);
+                GameManager.Instance.AddSoftCurrencyAmount(softCurrencyToAdd);
                 text.GainCurrency(softCurrencyToAdd.ToString());
             }
         }

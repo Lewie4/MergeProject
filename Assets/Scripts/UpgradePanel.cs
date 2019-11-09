@@ -34,7 +34,7 @@ public class UpgradePanel : MonoBehaviour
 
         image.sprite = UpgradeManager.Instance.GetSprite(upgrade);
 
-        levelText.text = "Level " + UpgradeManager.Instance.GetUpgradeLevel(upgrade) + 1;
+        levelText.text = "Level " + (UpgradeManager.Instance.GetUpgradeLevel(upgrade) + 1);
 
         descText.text = UpgradeManager.Instance.GetDescription(upgrade);
     }

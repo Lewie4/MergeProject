@@ -16,7 +16,7 @@ public class ItemManager : Singleton<ItemManager>
             if(CheckMerge(currentItem, targetItem))
             {
                 //Merge
-                int upgradeBonus = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemMergeLevel) <= Random.Range(0f, 1f) ? 1 : 0;
+                int upgradeBonus = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemMergeLevel) >= Random.Range(0f, 1f) ? 1 : 0;
                 targetItem.SetLevel(targetItem.GetLevel() + 1 + upgradeBonus + (int)BoostManager.Instance.GetBoostMultiplier(Boost.ItemMergeLevel));
                 targetItem.ResetPosition();
 

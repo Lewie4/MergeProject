@@ -22,12 +22,9 @@ public class UpgradeManager : Singleton<UpgradeManager>
     [SerializeField] private UpgradeScriptableObject itemSpawnHigherLevels;
     [SerializeField] private UpgradeScriptableObject GoldMults;
 
-    private Dictionary<Upgrade, int> upgrades = new Dictionary<Upgrade, int>();
-
-
     public int GetUpgradeLevel(Upgrade upgrade)
     {
-        if (upgrades.TryGetValue(upgrade, out int level))
+        if (GameManager.Instance.saveData.upgrades.TryGetValue(upgrade, out int level))
         {
             return level;
         }
@@ -83,13 +80,13 @@ public class UpgradeManager : Singleton<UpgradeManager>
 
     public void UpgradeSuccessful(Upgrade upgrade)
     {
-        if(upgrades.ContainsKey(upgrade))
+        if(GameManager.Instance.saveData.upgrades.ContainsKey(upgrade))
         {
-            upgrades[upgrade] = upgrades[upgrade] + 1;
+            GameManager.Instance.saveData.upgrades[upgrade] = GameManager.Instance.saveData.upgrades[upgrade] + 1;
         }
         else
         {
-            upgrades.Add(upgrade, 1);
+            GameManager.Instance.saveData.upgrades.Add(upgrade, 1);
         }
     }
 
