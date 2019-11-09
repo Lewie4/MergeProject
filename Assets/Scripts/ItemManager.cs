@@ -53,13 +53,13 @@ public class ItemManager : Singleton<ItemManager>
 
     public void SpawnItem(int level = 0)
     {
-        int itemCount = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemDoubleSpawn) <= Random.Range(0f, 1f) ? 2 : 1;
+        int itemCount = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemDoubleSpawn) >= Random.Range(0f, 1f) ? 2 : 1;
 
         foreach (Item item in items)
         {
             if (item.GetLevel() < 0)
             {
-                int upgradeBonus = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnHigerLevel) <= Random.Range(0f, 1f) ? 1 : 0;                
+                int upgradeBonus = UpgradeManager.Instance.GetUpgradeValue(Upgrade.ItemSpawnHigerLevel) >= Random.Range(0f, 1f) ? 1 : 0;                
                 item.SetLevel(level + upgradeBonus);
                 itemCount--;
 
